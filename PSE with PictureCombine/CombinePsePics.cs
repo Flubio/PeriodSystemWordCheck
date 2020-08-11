@@ -9,9 +9,9 @@ namespace PSE_with_PictureCombine
     public class CombinePsePics
     {
 #if DEBUG
-        static string PicPath = @"D:\Development\Dev-Main\C#\PeriodSystemWordCheck\PSE with PictureCombine\src\";
+        static string PicPath = @"..\..\..\src\";
 #else
-        static string PicPath = Path.Combine(System.Reflection.Assembly.GetEntryAssembly().Location, @"\src\");
+        static string PicPath = @".\src\";
 #endif
         static string PicPathOutPut = Path.Combine( Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Pse_OutPut");
         static bool isFirst = true;
