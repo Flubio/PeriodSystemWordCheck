@@ -5,6 +5,9 @@
 This Program takes Words from Users and compares it with the PSE
 
 # How to install & build
+
+  Go to [Release](https://github.com/Flubio/PeriodSystemWordCheck/releases), download the latest stable release and execute either one of those exe files
+
 `git clone https://github.com/Flubio/PeriodSystemWordCheck.git` \
   After you've done this open VisualStudio and compile the Project on Release or start it in dev-mode
 \
