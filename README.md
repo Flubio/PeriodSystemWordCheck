@@ -13,3 +13,6 @@ This Program takes Words from Users and compares it with the PSE
 2. Enter a desired word you want to check ('stop' is used to stop the Program)
 3. If you're using the PSE without the picture combining your input will be checked against the PSE and if it can be built it'll be outputtet in the Console
 3. If you're using the PSE with the picture combining your input will be checked against the PSE and if it can be built it'll be outputtet in the Console and the Program creates a Folder called 'Pse_OutPut' on your desktop, where the final pictures are being stored.
+
+# Demo
+![Demo](https://github.com/Flubio/PeriodSystemWordCheck/blob/master/pse_pics/psegendemo.png)
