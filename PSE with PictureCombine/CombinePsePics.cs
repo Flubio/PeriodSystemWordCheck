@@ -47,8 +47,14 @@ namespace PSE_with_PictureCombine
             string outName = "";
             imageNames.ForEach(x => outName += x);
             imageNames.Clear();
-            image.Save(PicPathOutPut + @"\"+outName+".png");
-            Console.WriteLine("Picture generated at: " + PicPathOutPut + @"\" + outName + ".png");
+            string dir = Path.Combine(PicPathOutPut, outName);
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            image.Save(dir + @"\"+outName+".png");
+            image.Save(dir + @"\"+outName+".jpg");
+            Console.WriteLine("Picture generated at: " + dir);
         }
     }
 }
