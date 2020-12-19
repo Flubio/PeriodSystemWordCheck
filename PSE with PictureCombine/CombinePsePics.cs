@@ -13,14 +13,29 @@ namespace PSE_with_PictureCombine
 #else
         static string PicPath = @".\src\";
 #endif
+        static string OptPicPathOut = "";
         static string PicPathOutPut = Path.Combine( Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Pse_OutPut");
         static bool isFirst = true;
         public static void CombinePics(List<string> imageNames)
         {
+            Console.WriteLine("Please Enter an output Folder (Optional -> skip with enter)");
+            OptPicPathOut = Console.ReadLine();
+
+            if(OptPicPathOut == "")
+            {
             if (!Directory.Exists(PicPathOutPut))
             {
                 Directory.CreateDirectory(PicPathOutPut);
             }
+            }
+            else
+            {
+                if (!Directory.Exists(OptPicPathOut))
+                {
+                    Directory.CreateDirectory(OptPicPathOut);
+                }
+            }
+
 
             Image image = null;
             foreach (string imgName in imageNames)
@@ -47,8 +62,16 @@ namespace PSE_with_PictureCombine
             string outName = "";
             imageNames.ForEach(x => outName += x);
             imageNames.Clear();
-            image.Save(PicPathOutPut + @"\"+outName+".png");
-            Console.WriteLine("Picture generated at: " + PicPathOutPut + @"\" + outName + ".png");
+            string dir = (OptPicPathOut == ""? Path.Combine(PicPathOutPut, outName) : Path.Combine(OptPicPathOut, outName));
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            image.Save(dir + @"\"+outName+".png");
+            Console.WriteLine("Generated " + outName + ".png");
+            image.Save(dir + @"\"+outName+".jpg");
+            Console.WriteLine("Generated " + outName + ".jpg");
+            Console.WriteLine("Pictures saved at: " + dir + "/");
         }
     }
 }

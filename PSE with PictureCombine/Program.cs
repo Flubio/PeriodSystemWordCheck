@@ -32,7 +32,7 @@ namespace PSE_with_PictureCombine
                     Environment.Exit(0);
                 }
 
-                if (line == null || line == " ")
+                if (line == null || line == " " || line == "")
                 {
                     Console.WriteLine("Error: invalid input");
                     Console.WriteLine("Sorry the input can't be empty");
@@ -61,6 +61,7 @@ namespace PSE_with_PictureCombine
                 if (!((item >= 65 && item <= 90) || (item >= 97 && item <= 122) || item == 32))
                 {
                     Console.WriteLine("Input invalid!");
+                    Console.WriteLine("Your Input can't contain any special characters");
                     output = "";
                     return false; //invalid
                 }
